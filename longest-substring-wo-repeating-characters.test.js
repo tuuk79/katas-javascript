@@ -42,3 +42,24 @@ test("abcdefab should return 6", () => {
   var result = getSubstring(input);
   expect(result).toBe(6);
 });
+
+test("bbbbb should return 1", () => {
+  var input = ["bbbbb"];
+
+  var result = getSubstring(input);
+  expect(result).toBe(1);
+});
+
+test("pwwkew should return 3", () => {
+  var input = ["pwwkew"];
+
+  var result = getSubstring(input);
+  expect(result).toBe(3);
+});
+
+test("dvdf should return 3", () => {
+  var input = ["dvdf"];
+
+  var result = getSubstring(input);
+  expect(result).toBe(3);
+});
