@@ -1,12 +1,15 @@
-var findUnpaired = function(given) {
-var occurrences = new Map()
+var findUnpaired = function(A, K) {
+  var occurrences = new Map();
 
-  if (given.length == 1) {
-      return given
+  if (A.length == 1) {
+    return A[0];
   }
 
-  for (var i = 0; i < given.length; i++) {
+  for (var i = 0; i < A.length; i++) {
+    if (i == A.length - 1) {
+		
+    }
   }
 };
 
-module.exports.findUnpaired = findUnpaired
+module.exports.findUnpaired = findUnpaired;
