@@ -26,4 +26,9 @@ describe("reverse words in a string", () => {
     var input = "  hello world!  ";
     expect(reverseWords(input)).toBe("world! hello");
   });
+
+  it.only("should turn ' hello world ' into 'hello world'", () => {
+    var input = " hello world ";
+    console.log(input.replace(/\b\s\s\b/g, "-"));
+  });
 });
