@@ -2,19 +2,19 @@ function generateDocument(characters, document) {
 	let counts = new Map();
 
 	for (let i = 0; i < characters.length; i++) {
-		if (counts.has(characters[i])) {
+		if (!counts.has(characters[i])) {
+			counts.set(characters[i], 1);
+		} else {
 			let existing = counts.get(characters[i]);
 			existing++;
 			counts.set(characters[i], existing);
-		} else {
-			counts.set(characters[i], 1);
 		}
 	}
 
-	console.log(counts);
-
 	for (let j = 0; j < document.length; j++) {
-		if (counts.has(document[j])) {
+		if (!counts.has(document[j])) {
+			return false;
+		} else {
 			let existing = counts.get(document[j]);
 			if (existing > 0) {
 				existing--;
@@ -22,8 +22,6 @@ function generateDocument(characters, document) {
 			} else {
 				return false;
 			}
-		}	else {
-			return false;
 		}
 	}
 
