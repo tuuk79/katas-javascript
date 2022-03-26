@@ -1,22 +1,9 @@
 function findThreeLargestNumbers(array) {
-	if (array.length < 4) return array;
-	const result = [];
-	for (let a of array) {
-		if (result > 0) {
-			for (let i = 0; i < result.length; i++) {
-				if (a < array[i]) {
-					result.unshift(a);
-					break;
-				} else {
-					result.splice(i + 1, 0, a);
-				}
-			}
-		} else {
-			result.push(a);
-		}
-	}
-
-	return result;
+	if (array.length < 4) return array.sort();
+	array.sort(function (a, b) {
+		return a - b;
+	});
+	return array.splice(array.length - 3, array.length);
 }
 
 describe("find three largest numbers", () => {
@@ -44,9 +31,14 @@ describe("find three largest numbers", () => {
 	it("should return [1,4,3,2]", () => {
 		const array = [1, 2, 3, 4];
 		const actual = findThreeLargestNumbers(array);
-		console.log(actual);
-		const expected = [1, 2, 3, 4];
-		console.log(expected);
+		const expected = [2, 3, 4];
+		expect(actual).toEqual(expected);
+	});
+
+	it("should return [12, 33, 56]", () => {
+		const array = [5, 3, 12, 4, 56, 33];
+		const actual = findThreeLargestNumbers(array);
+		const expected = [12, 33, 56];
 		expect(actual).toEqual(expected);
 	});
 });
