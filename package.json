@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll -- verbose"
+    "test": "jest --watchAll"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,10 @@
     "url": "https://github.com/tuuk79/katas-javascript/issues"
   },
   "homepage": "https://github.com/tuuk79/katas-javascript#readme",
-  "devDependencies": {}
+  "devDependencies": {
+    "jest": "^27.5.1"
+  },
+  "dependencies": {
+    "prettier": "^2.5.1"
+  }
 }
