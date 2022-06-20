@@ -9,12 +9,21 @@
 // Input: "abcd"
 // Output: "dcbabcd"
 
-function getShortestPalindrome(input) {}
+function getShortestPalindrome(input) {
+	if (input.length === 1) return input;
+
+}
 
 describe("shortest palindrome", () => {
-  it("aacecaaa should yield aaacecaaa", () => {
-    var input = aacecaaa;
+  it("should return a", () => {
+    var input = "a";
     var result = getShortestPalindrome(input);
-    expect(result).toBe("aaacecaaa");
+    expect(result).toBe("a");
+  });
+
+  it("should return aba", () => {
+    var input = "aba";
+    var result = getShortestPalindrome(input);
+    expect(result).toBe("aba");
   });
 });
