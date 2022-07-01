@@ -1,18 +1,23 @@
-// use pointers or indexes for efficiency
+function mergeSort(array) {
+	if (array.length <= 1) return array
+	const mid = array.length / 2 - 1
+	const leftHalf = array.slice(0, mid + 1)
+	const rightHalf = array.slice(mid + 1, array.length)
 
-function mergeSort(input) {
-	if (input.length === 0) {
-		return [];
-	}
+	console.log(array, leftHalf, rightHalf)
 
-	if (input.length === 1) {
-		return input;
-	}
+	const leftResult = mergeSort(leftHalf)
+	const rightResult = mergeSort(rightHalf)
+	return merge(leftResult, rightResult)
+
 }
 
-function getMidPoint(array) {
-	const lastIndex = array.length - 1
-	return Math.floor(lastIndex  / 2)
+function merge(left, right) {
+	if (left[0] > right[0]) {
+		return [...right, ...left]
+	} else {
+		return [...left, ...right]
+	}
 }
 
 describe("merge sort", () => {
@@ -30,23 +35,9 @@ describe("merge sort", () => {
 		expect(actual).toEqual(expected);
 	});
 
-	it("should get the midpoint of [1,2,3] to be index 1", () => {
-		const array = [1, 2, 3];
-		const actual = getMidPoint(array);
-		const expected = 1;
-		expect(actual).toEqual(expected);
-	});
-	
-	it("should get the midpoint of [1,2] to be index 0", () => {
-		const array = [1, 2];
-		const actual = getMidPoint(array);
-		const expected = 0;
-		expect(actual).toEqual(expected);
-	});
-	
 	it("should sort [5,2] to [2,5]", () => {
 		const input = [5,2];
-		const actual = mergeSort(input);
+		const actual = mergeSort(input, 0, input.length - 1);
 		const expected = [2,5];
 		expect(actual).toEqual(expected);
 	});
