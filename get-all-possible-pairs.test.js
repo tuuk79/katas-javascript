@@ -6,7 +6,6 @@ function getAllPossiblePairs(input) {
 		}
 	}
 
-	console.log(pairs)
 	return pairs
 }
 
@@ -14,7 +13,7 @@ describe('get all possible pairs', () => {
 	it('should list [1,1]', () => {
 		const given = [1]
 		const actual = getAllPossiblePairs(given)
-		const expected = [1,1]
+		const expected = [[1,1]]
 		expect(actual).toEqual(expected)
 	})
 
