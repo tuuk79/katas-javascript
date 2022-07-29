@@ -17,8 +17,6 @@ function build(array) {
 			}
 		}
 	}
-
-	console.log(tree);
 }
 
 describe("binary search tree", () => {
