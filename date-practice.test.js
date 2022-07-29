@@ -15,4 +15,10 @@ describe('date practice', () => {
 		const day = date.toLocaleDateString('en-US', { weekday: 'long' })
 		expect(day).toBe('Saturday')
 	})
+
+	it('should find the current day', () => {
+		const date = new Date('1/1/2022')
+		const day = date.toLocaleDateString('en-US', { weekday: 'short' })
+		expect(day).toBe('Sat')
+	})
 })
