@@ -11,4 +11,4 @@ const myLinkedList = {
 	}
 }
 
-console.log(myLinkedList.head.next.next.next)
+console.log(myLinkedList.head.next.next)
